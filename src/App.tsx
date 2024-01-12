@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import RepoShow from './components/RepoCard';
 import { RepoProps } from './types';
+import RepoCard from './components/RepoCard';
 import './app.scss';
 
 const App = () => {
@@ -22,11 +22,14 @@ const App = () => {
 
   return (
     <>
-      {repos.length !== 0 ? repos.map((repo: RepoProps) => (
-        <div className='container' key={repo.id}>
-          <RepoShow repo={repo} />
-        </div>
-      )) : <p>Fetching repos...</p>}
+      <h1>The most popular JS libraries on Github</h1>
+      <div className='container'>
+        {repos.length !== 0 ? repos.map((repo: RepoProps) => (
+          <a className='link-wrapper' href={repo.html_url} target="blank" key={repo.id}>
+            <RepoCard repo={repo} />
+          </a>
+        )) : <p>Fetching repos...</p>}
+      </div>
     </>
   )
 }

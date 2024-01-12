@@ -1,4 +1,5 @@
 import { RepoProps } from '../types';
+import './repoCard.scss';
 
 const RepoShow = ({ repo }: {repo: RepoProps }) => {
   return (
@@ -9,13 +10,17 @@ const RepoShow = ({ repo }: {repo: RepoProps }) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{repo.owner.login}</td>
-          <td>{repo.stargazers_count}</td>
-          <td>{repo.forks_count}</td>
-          <td>{repo.open_issues_count}</td>
+        <tr className='logo'>
+          <td>
+            <img src={repo.owner.avatar_url} alt={`Avatar for ${repo.owner.login}`} />
+          </td>
         </tr>
-  
+        <tr className='details'>
+          <td className='owner'>{`By ${repo.owner.login}`}</td>
+          <td>{`${repo.stargazers_count} stars`}</td>
+          <td>{`${repo.forks_count} forks`}</td>
+          <td>{`${repo.open_issues_count} open issues`}</td>
+        </tr>
       </tbody>
     </table>
   )
