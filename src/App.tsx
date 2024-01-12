@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-
-interface RepoProps {
-  id: number;
-  name: string;
-}
+import RepoShow from './components/RepoCard';
+import { RepoProps } from './types';
+import './app.scss';
 
 const App = () => {
   const [repos, setRepos] = useState<RepoProps[]>([]);
@@ -25,8 +23,8 @@ const App = () => {
   return (
     <>
       {repos.length !== 0 ? repos.map((repo: RepoProps) => (
-        <div key={repo.id}>
-          {repo.name}
+        <div className='container' key={repo.id}>
+          <RepoShow repo={repo} />
         </div>
       )) : <p>Fetching repos...</p>}
     </>
