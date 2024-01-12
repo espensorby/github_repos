@@ -2,7 +2,7 @@ table {
   width: 100%;
 
   thead {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: left;
   }
 
@@ -12,20 +12,24 @@ table {
     align-items: center;
     margin-top: 16px;
 
-    .logo img {
-      width: 120px;
-      margin-right: 24px;
-      border-radius: 12px;
-    }
-
-    .details {
+    tr {
       display: flex;
-      flex-direction: column;
-      line-height: 1.5rem;
 
-      .owner {
-        color: #c3fff8;
-        font-weight: bold;
+      .logo img {
+        width: 120px;
+        margin-right: 24px;
+        border-radius: 12px;
+      }
+  
+      .details {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5rem;
+  
+        .owner {
+          color: #c3fff8;
+          font-weight: bold;
+        }
       }
     }
   }

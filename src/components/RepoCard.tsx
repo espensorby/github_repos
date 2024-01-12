@@ -10,16 +10,16 @@ const RepoShow = ({ repo }: {repo: RepoProps }) => {
         </tr>
       </thead>
       <tbody>
-        <tr className='logo'>
-          <td>
+        <tr>
+          <td className='logo'>
             <img src={repo.owner.avatar_url} alt={`Avatar for ${repo.owner.login}`} />
           </td>
-        </tr>
-        <tr className='details'>
-          <td className='owner'>{`By ${repo.owner.login}`}</td>
-          <td>{`${repo.stargazers_count} stars`}</td>
-          <td>{`${repo.forks_count} forks`}</td>
-          <td>{`${repo.open_issues_count} open issues`}</td>
+          <td className='details'>
+            <span className='owner'>{`By ${repo.owner.login}`}</span>
+            <span>{`${repo.stargazers_count} stars`}</span>
+            <span>{`${repo.forks_count} forks`}</span>
+            <span>{`${repo.open_issues_count} open issues`}</span>
+          </td>
         </tr>
       </tbody>
     </table>
